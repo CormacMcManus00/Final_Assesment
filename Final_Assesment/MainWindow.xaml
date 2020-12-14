@@ -5,33 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Final_Assesment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid RenderTransformOrigin="0.498,0.498">
-        <CheckBox Content="Full Time" HorizontalAlignment="Left" Margin="33,47,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Part Time" HorizontalAlignment="Left" Margin="139,47,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="FTCheckbox" Content="Full Time" HorizontalAlignment="Left" Margin="33,47,0,0" VerticalAlignment="Top" Checked="FTCheckbox_Checked" Unchecked="FTCheckbox_Unchecked"/>
+        <CheckBox x:Name="PTCheckbox" Content="Part Time" HorizontalAlignment="Left" Margin="139,47,0,0" VerticalAlignment="Top" Checked="PTCheckbox_Checked" Unchecked="PTCheckbox_Unchecked"/>
         <Label Content="EMPLOYEES" HorizontalAlignment="Left" Margin="33,88,0,0" VerticalAlignment="Top"/>
-        <ListBox HorizontalAlignment="Left" Height="271" Margin="33,119,0,0" VerticalAlignment="Top" Width="176">
-            <ListBoxItem Content="JONES Jane - Part Time"/>
-            <ListBoxItem Content="MURPHY Joe - Full Time"/>
-            <ListBoxItem Content="SMITH John - Full Time"/>
-            <ListBoxItem Content="WALSH Jess - Full Time"/>
-        </ListBox>
+        <ListBox x:Name="lbxNames" HorizontalAlignment="Left" Height="271" Margin="33,119,0,0" VerticalAlignment="Top" Width="176" />
         <Label Content="First Name" HorizontalAlignment="Left" Margin="247,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.392,0.528"/>
         <Label Content="Last Name" HorizontalAlignment="Left" Margin="248,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.465,0.795"/>
         <Label Content="Salary" HorizontalAlignment="Left" Margin="247,227,0,0" VerticalAlignment="Top"/>
         <Label Content="Hours Worked" HorizontalAlignment="Left" Margin="247,258,0,0" VerticalAlignment="Top"/>
         <Label Content="Hourly Rate" HorizontalAlignment="Left" Margin="248,289,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="353,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="353,151,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="353,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="353,258,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="353,286,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <RadioButton Content="FT" HorizontalAlignment="Left" Margin="353,195,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="PT" HorizontalAlignment="Left" Margin="401,195,0,0" VerticalAlignment="Top"/>
-        <Button Content="Clear" HorizontalAlignment="Left" Margin="557,122,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="557,165,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="557,212,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="557,258,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="fNameTextBox" HorizontalAlignment="Left" Height="23" Margin="353,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="surNameTextBox" HorizontalAlignment="Left" Height="23" Margin="353,151,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="salaryTextBox" HorizontalAlignment="Left" Height="23" Margin="353,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="hoursWorkedTextBox" HorizontalAlignment="Left" Height="23" Margin="353,258,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="hourlyRateTextBox" HorizontalAlignment="Left" Height="23" Margin="353,286,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="ftRadioButton" Content="FT" HorizontalAlignment="Left" Margin="353,195,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="ptRadioButton" Content="PT" HorizontalAlignment="Left" Margin="401,195,0,0" VerticalAlignment="Top"/>
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="557,122,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="557,165,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="557,212,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="557,258,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="310,361,0,0" TextWrapping="Wrap" Text="Monthly Pay: " VerticalAlignment="Top" Width="163"/>
     </Grid>
 </Window>

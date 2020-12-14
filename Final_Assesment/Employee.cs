@@ -12,6 +12,9 @@ namespace Final_Assesment
 
         public string SurName { get; set; }
 
+
+
+
         abstract public decimal CalculateMonthlyPay();
 
         
@@ -19,11 +22,24 @@ namespace Final_Assesment
 
     class FullTimeEmployee : Employee
     {
-        public decimal salary { get; set; }
+        public decimal Salary { get; set; }
+
+        public FullTimeEmployee(string firstname, string surname, decimal salary)
+        {
+            FirstName = firstname;
+            SurName = surname;
+            Salary = salary;
+        }
 
         public override decimal CalculateMonthlyPay()
         {
-            throw new NotImplementedException();
+            decimal pay = Salary / 12;
+            return pay;
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"{SurName.ToUpper()},{FirstName} - Full Time");
         }
     }
 
@@ -32,9 +48,23 @@ namespace Final_Assesment
         public decimal HourlyRate { get; set; }
         public double HoursWorked { get; set; }
 
+        public PartTimeEmployee(string firstname, string surname, decimal hourlyrate, double hoursworked)
+        {
+            FirstName = firstname;
+            SurName = surname;
+            HourlyRate = hourlyrate;
+            HoursWorked = hoursworked;
+        }
+
         public override decimal CalculateMonthlyPay()
         {
-            throw new NotImplementedException();
+            decimal pay = HourlyRate * Convert.ToDecimal(HoursWorked);
+            return pay;
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"{SurName.ToUpper()},{FirstName} - Part Time");
         }
     }
 }
