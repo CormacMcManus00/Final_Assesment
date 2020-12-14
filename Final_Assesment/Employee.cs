@@ -12,9 +12,6 @@ namespace Final_Assesment
 
         public string SurName { get; set; }
 
-
-
-
         abstract public decimal CalculateMonthlyPay();
 
         

@@ -103,14 +103,66 @@ namespace Final_Assesment
         }
 
 
-
+        //sets what happens when FT checkbox is unchecked
         private void FTCheckbox_Unchecked(object sender, RoutedEventArgs e)
         {
             lbxNames.ItemsSource = EmployeeCollection;
+            
 
             if (PTCheckbox.IsChecked == true)
             {
                 lbxNames.ItemsSource = PTEmployeeCollection;
+            }
+        }
+
+        private void lbxNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           /****************************************************NOTE****************************************************
+            NOTE if statements appear long-winded as I could not make it work using only lbxNames.SelectedItem.GetType()
+            ************************************************************************************************************/
+
+            //if employee is full time, salary box is filled and ft radio button is checked
+            if (lbxNames.SelectedItem.GetType().ToString() == "Final_Assesment.FullTimeEmployee")
+            {
+                //find what employee is selected
+                FullTimeEmployee selectedEmployee = lbxNames.SelectedItem as FullTimeEmployee;
+                
+                // make sure it isnt null
+                if (selectedEmployee != null)
+                {
+                    //populate text boxes & radio button
+                    fNameTextBox.Text = selectedEmployee.FirstName;
+                    surNameTextBox.Text = selectedEmployee.SurName;
+                    ftRadioButton.IsChecked = true;
+                    salaryTextBox.Text = selectedEmployee.Salary.ToString();
+                    hoursWorkedTextBox.Text = "N/A";
+                    hourlyRateTextBox.Text = "N/A";
+                    decimal monthlypay = selectedEmployee.Salary * 4;
+                    MonthlypayLabel.Content = monthlypay;
+                    
+                }
+            }
+
+            //if employee is part time, hours worked and hourly pay boxes are filled and pt radio button is checked
+            else if (lbxNames.SelectedItem.GetType().ToString() == "Final_Assesment.PartTimeEmployee")
+            {
+                //find what employee is selected
+                PartTimeEmployee selectedEmployee = lbxNames.SelectedItem as PartTimeEmployee;
+
+                //make sure it isn't null
+                if (selectedEmployee != null)
+                {
+                    //populate text boxes & radio button
+                    fNameTextBox.Text = selectedEmployee.FirstName;
+                    surNameTextBox.Text = selectedEmployee.SurName;
+                    ptRadioButton.IsChecked = true;
+                    salaryTextBox.Text = "N/A";
+                    hoursWorkedTextBox.Text = selectedEmployee.HoursWorked.ToString();
+                    hourlyRateTextBox.Text = selectedEmployee.HourlyRate.ToString();
+                    decimal monthlypay = Convert.ToDecimal(selectedEmployee.HoursWorked) * selectedEmployee.HourlyRate * 4;
+                    MonthlypayLabel.Content = monthlypay;
+                }
+                
             }
         }
     }

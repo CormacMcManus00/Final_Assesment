@@ -14,7 +14,7 @@
         <CheckBox x:Name="FTCheckbox" Content="Full Time" HorizontalAlignment="Left" Margin="33,47,0,0" VerticalAlignment="Top" Checked="FTCheckbox_Checked" Unchecked="FTCheckbox_Unchecked"/>
         <CheckBox x:Name="PTCheckbox" Content="Part Time" HorizontalAlignment="Left" Margin="139,47,0,0" VerticalAlignment="Top" Checked="PTCheckbox_Checked" Unchecked="PTCheckbox_Unchecked"/>
         <Label Content="EMPLOYEES" HorizontalAlignment="Left" Margin="33,88,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbxNames" HorizontalAlignment="Left" Height="271" Margin="33,119,0,0" VerticalAlignment="Top" Width="176" />
+        <ListBox x:Name="lbxNames" HorizontalAlignment="Left" Height="271" Margin="33,119,0,0" VerticalAlignment="Top" Width="176" SelectionChanged="lbxNames_SelectionChanged" />
         <Label Content="First Name" HorizontalAlignment="Left" Margin="247,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.392,0.528"/>
         <Label Content="Last Name" HorizontalAlignment="Left" Margin="248,154,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.465,0.795"/>
         <Label Content="Salary" HorizontalAlignment="Left" Margin="247,227,0,0" VerticalAlignment="Top"/>
@@ -31,6 +31,7 @@
         <Button Content="Add" HorizontalAlignment="Left" Margin="557,165,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="557,212,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="557,258,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="310,361,0,0" TextWrapping="Wrap" Text="Monthly Pay: " VerticalAlignment="Top" Width="163"/>
+        <TextBlock HorizontalAlignment="Left" Margin="248,362,0,0" TextWrapping="Wrap" Text="Monthly Pay: " VerticalAlignment="Top" Width="85"/>
+        <Label x:Name="MonthlypayLabel" Content="N/A" HorizontalAlignment="Left" Margin="324,357,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.861,0.752"/>
     </Grid>
 </Window>
