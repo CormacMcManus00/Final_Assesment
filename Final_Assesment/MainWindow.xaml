@@ -27,10 +27,10 @@
         <TextBox x:Name="hourlyRateTextBox" HorizontalAlignment="Left" Height="23" Margin="353,286,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <RadioButton x:Name="ftRadioButton" Content="FT" HorizontalAlignment="Left" Margin="353,195,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="ptRadioButton" Content="PT" HorizontalAlignment="Left" Margin="401,195,0,0" VerticalAlignment="Top"/>
-        <Button Content="Clear" HorizontalAlignment="Left" Margin="557,122,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="557,165,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="557,212,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="557,258,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2"/>
+        <Button x:Name="ClearBtn" Content="Clear" HorizontalAlignment="Left" Margin="557,122,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="ClearBtn_Click"/>
+        <Button x:Name="AddBtn" Content="Add" HorizontalAlignment="Left" Margin="557,165,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="AddBtn_Click"/>
+        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Left" Margin="557,212,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="UpdateBtn_Click"/>
+        <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="557,258,0,0" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Click="DeleteBtn_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="248,362,0,0" TextWrapping="Wrap" Text="Monthly Pay: " VerticalAlignment="Top" Width="85"/>
         <Label x:Name="MonthlypayLabel" Content="N/A" HorizontalAlignment="Left" Margin="324,357,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.861,0.752"/>
     </Grid>
